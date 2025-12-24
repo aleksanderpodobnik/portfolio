@@ -24,7 +24,7 @@ export default function Skills() {
             key={group.category}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 * groupIndex }}
+            transition={{ delay: 0.5 + 0.1 * groupIndex }}
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row py-6 gap-6 sm:gap-12"
           >

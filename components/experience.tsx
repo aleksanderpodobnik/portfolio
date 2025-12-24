@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import SectionHeading from "./section-heading";
+import { motion } from "framer-motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -16,7 +17,15 @@ export default function Experience() {
   const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+    <motion.section
+      id="experience"
+      ref={ref}
+      className="scroll-mt-28 mb-28 sm:mb-40"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      viewport={{ once: true }}
+    >
       <SectionHeading>My experience</SectionHeading>
       {
         <VerticalTimeline lineColor="">
@@ -71,6 +80,6 @@ export default function Experience() {
           ))}
         </VerticalTimeline>
       }
-    </section>
+    </motion.section>
   );
 }

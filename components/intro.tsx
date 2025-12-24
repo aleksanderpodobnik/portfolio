@@ -44,11 +44,11 @@ export default function Intro() {
             }}
           >
             <Image
-              src="/aleksanderportrait.jpg"
+              src="/portrait.jpg"
               alt="Aleksander's portrait"
               width="192"
               height="192"
-              quality="95"
+              quality={100}
               priority={true}
               className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
@@ -76,8 +76,8 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hi, I'm Aleksander.</span> I'm a university{" "}
-        <span className="font-bold">student,</span> currently pursuing a degree
-        in
+        <span className="font-bold">student,</span> currently pursuing a
+        Bachelor's degree in
         <span className="font-bold">
           {" "}
           Computer Science and Informational Technology.
@@ -90,7 +90,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.1,
+          delay: 0.5,
         }}
       >
         <a

@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import raspberrypirfidlockImg from "@/public/raspberrypirfidlock.jpg";
+import loading from "@/public/loading.gif";
 import zupologoImg from "@/public/zupologo.png";
 
 export const links = [
@@ -37,23 +37,23 @@ export const experiencesData = [
     description:
       "During my internship at ZupO.si, I gained hands-on experience with enterprise virtualization through VMware, developed practical networking skills by configuring Ubiquiti network infrastructure, and strengthened my understanding of network design principles using Cisco Packet Tracer. This technical foundation has prepared me to contribute effectively to infrastructure management and network administration in professional IT environments.",
     icon: React.createElement(CgWorkAlt),
-    date: "--> 2023 - 2023 · Less than a year",
+    date: "2023 - 2023 · Less than a year",
     logo: zupologoImg,
   },
 ] as const;
 
-/*export const projectsData = [
+export const projectsData = [
   {
-    title: "Raspberry Pi RFID Lock",
+    title: "Nothing here yet . . .",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    tags: ["JavaScript", "React"],
-    icons: ["logos:javascript", "logos:react"],
-    imageUrl: raspberrypirfidlockImg,
-    githubLink: "https://github.com",
-    demoLink: "https://www.youtube.com",
+      "Stay tuned! I'm currently working on exciting projects that I'll be sharing soon.",
+    tags: ["React"],
+    icons: ["logos:react"],
+    imageUrl: loading,
+    githubLink: "https://github.com/aleksanderpodobnik",
+    demoLink: "https://www.youtube.com/@aco08p/videos",
   },
-] as const;*/
+] as const;
 
 export const skillsData = [
   {
@@ -75,8 +75,8 @@ export const skillsData = [
     category: "Frontend",
     skills: [
       { name: "React.js", icon: "logos:react" },
-      { name: "Vue.js", icon: "logos:vue" },
       { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "Vue.js", icon: "logos:vue" },
       { name: "Bootstrap", icon: "logos:bootstrap" },
       { name: "HTML5", icon: "logos:html-5" },
       { name: "CSS3", icon: "logos:css-3" },
@@ -85,17 +85,6 @@ export const skillsData = [
       { name: "Responsive Design" },
     ],
   },
-  /*{
-    category: "DevOps",
-    skills: [
-      { name: "AWS", icon: "logos:aws" },
-      { name: "Docker", icon: "logos:docker-icon" },
-      { name: "Kubernetes", icon: "logos:kubernetes" },
-      { name: "Jenkins", icon: "logos:jenkins" },
-      { name: "GitHub Actions", icon: "logos:github-actions" },
-      { name: "CI/CD" },
-    ],
-  },*/
   {
     category: "Tools",
     skills: [

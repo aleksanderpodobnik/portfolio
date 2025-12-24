@@ -23,6 +23,19 @@ export default function ActiveSectionContextProvider({
   const [activeSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0); //
 
+  React.useEffect(() => {
+    function onScroll() {
+      if (typeof window === "undefined") return;
+      if (window.scrollY <= 48 && Date.now() - timeOfLastClick > 1000) {
+        setActiveSection("Home");
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [timeOfLastClick]);
+
   return (
     <ActiveSectionContext.Provider
       value={{

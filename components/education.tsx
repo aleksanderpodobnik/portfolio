@@ -22,6 +22,7 @@ export default function Education() {
       }}
       transition={{
         duration: 1,
+        delay: 0.5,
       }}
       viewport={{
         once: true,
@@ -32,7 +33,6 @@ export default function Education() {
         <div>
           <Image src="/ferilogo.jpg" alt="FERI" width="150" height="150" />
         </div>
-
         <div>
           <p className="text-lg font-medium pb-2">
             University of Maribor | Faculty of Electrical Engineering and
@@ -40,11 +40,26 @@ export default function Education() {
           </p>
           <hr className="pt-2" />
           <p>
-            Currently pursuing a degree in Computer Science and Informational
-            Technology
+            Currently pursuing a Bachelor's degree in Computer Science and
+            Informational Technology
           </p>
-          <p className="mt-1">Start date: October 2025</p>
-          <p className="my-1">Expected graduation date: June 2028</p>
+          <p className="mt-1">Start date: 2025</p>
+          <p className="my-1">Expected graduation date: 2028</p>
+        </div>
+      </div>
+
+      <div className="mt-4 flex gap-6 border border-black/5 rounded-lg pt-4 pb-7 px-5 md:p-10 bg-gray-100 dark:bg-white/10 dark:hover:bg-white/20 hover:bg-gray-200 transition dark:text-white">
+        <div>
+          <Image src="/ssdlogo.jpg" alt="SSD" width="150" height="150" />
+        </div>
+        <div>
+          <p className="text-lg font-medium pb-2">
+            Secondary School Domžale | Computer Science and Informational
+            Technology (SSI)
+          </p>
+          <hr className="pt-2" />
+          <p className="mt-1">Start date: 2019</p>
+          <p className="my-1">Graduation date: 2024</p>
         </div>
       </div>
     </motion.section>
