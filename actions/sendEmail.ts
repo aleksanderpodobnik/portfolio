@@ -34,6 +34,27 @@ export const sendEmail = async (formData: FormData) => {
   const MAX_TOTAL_ATTACHMENT_BYTES = 5 * 1024 * 1024;
   let totalBytes = 0;
 
+  function arrayBufferToBase64(arrayBuffer: ArrayBuffer) {
+    try {
+      if (typeof Buffer !== "undefined" && typeof Buffer.from === "function") {
+        return Buffer.from(arrayBuffer).toString("base64");
+      }
+    } catch (e) {}
+
+    try {
+      let binary = "";
+      const bytes = new Uint8Array(arrayBuffer);
+      const len = bytes.byteLength;
+      for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+      if (typeof btoa !== "undefined") return btoa(binary);
+      if (typeof globalThis?.btoa === "function")
+        return globalThis.btoa(binary);
+    } catch (e) {}
+
+    return "";
+  }
   console.log("sendEmail: attachments entries count:", entries.length);
 
   for (let idx = 0; idx < entries.length; idx++) {
@@ -53,10 +74,17 @@ export const sendEmail = async (formData: FormData) => {
       continue;
     }
 
-    const fileLike = entry as unknown as { name: string; size: number; type?: string; arrayBuffer: () => Promise<ArrayBuffer> };
+    const fileLike = entry as unknown as {
+      name: string;
+      size: number;
+      type?: string;
+      arrayBuffer: () => Promise<ArrayBuffer>;
+    };
     try {
       totalBytes += fileLike.size;
-      console.log(`sendEmail: processing attachment[${idx}] name=${fileLike.name} size=${fileLike.size}`);
+      console.log(
+        `sendEmail: processing attachment[${idx}] name=${fileLike.name} size=${fileLike.size}`
+      );
 
       if (totalBytes > MAX_TOTAL_ATTACHMENT_BYTES) {
         const maxMb = Math.round(MAX_TOTAL_ATTACHMENT_BYTES / 1024 / 1024);
@@ -67,9 +95,15 @@ export const sendEmail = async (formData: FormData) => {
       }
 
       const arrayBuffer = await fileLike.arrayBuffer();
-      const base64 = Buffer.from(arrayBuffer).toString("base64");
-      attachments.push({ name: fileLike.name, data: base64, type: fileLike.type });
-      console.log(`sendEmail: processed attachment[${idx}] bytes=${arrayBuffer.byteLength}`);
+      const base64 = arrayBufferToBase64(arrayBuffer);
+      attachments.push({
+        name: fileLike.name,
+        data: base64,
+        type: fileLike.type,
+      });
+      console.log(
+        `sendEmail: processed attachment[${idx}] bytes=${arrayBuffer.byteLength}`
+      );
     } catch (e) {
       console.error(`sendEmail: failed processing attachment[${idx}]`, e);
       return {
@@ -78,7 +112,12 @@ export const sendEmail = async (formData: FormData) => {
     }
   }
 
-  console.log("sendEmail: totalBytes", totalBytes, "attachments prepared", attachments.length);
+  console.log(
+    "sendEmail: totalBytes",
+    totalBytes,
+    "attachments prepared",
+    attachments.length
+  );
 
   let data;
   try {
