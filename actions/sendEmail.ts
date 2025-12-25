@@ -9,6 +9,7 @@ if (!process.env.RESEND_API_KEY) {
   console.error("RESEND_API_KEY is not set in environment variables.");
 }
 const resend = new Resend(process.env.RESEND_API_KEY);
+const FROM_EMAIL = process.env.SENDER_EMAIL || "onboarding@resend.dev";
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmailRaw = formData.get("senderEmail");
@@ -124,7 +125,7 @@ export const sendEmail = async (formData: FormData) => {
     const siteUrl =
       process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "";
     data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: `Contact Form <${FROM_EMAIL}>`,
       to: "aleksander.podobnik@gmail.com",
       subject: "Message from contact form",
       replyTo: senderEmail,
@@ -141,9 +142,20 @@ export const sendEmail = async (formData: FormData) => {
     console.log("sendEmail success:", data);
   } catch (error: unknown) {
     console.error("sendEmail error:", error);
+    // Try to surface richer error info (Resend may include response/error details)
+    let extra = null as null | Record<string, unknown>;
+    try {
+      // @ts-ignore
+      if (error && typeof (error as any).response === "object") {
+        // @ts-ignore
+        extra = (error as any).response;
+      }
+    } catch (e) {}
     console.error("sendEmail error message:", getErrorMessage(error));
+    if (extra) console.error("sendEmail extra response:", extra);
     return {
       error: getErrorMessage(error),
+      details: extra ?? undefined,
     };
   }
 
