@@ -10,6 +10,20 @@ import { Icon } from "@iconify/react";
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
 
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.05 * index,
+      },
+    }),
+  };
+
   return (
     <section
       id="skills"
@@ -33,14 +47,53 @@ export default function Skills() {
             </div>
 
             <ul className="sm:w-3/4 flex flex-wrap gap-3 text-gray-800 dark:text-white/80 text-lg">
-              {group.skills.map((skill) => (
-                <li
+              {group.skills.map((skill, index) => (
+                <motion.li
                   key={skill.name}
-                  className="flex items-center gap-2 bg-gray-100 dark:bg-white/10 px-3 py-1.5 rounded-lg"
+                  className="flex items-center gap-2 bg-gray-100 dark:bg-white/10 border border-black/[0.1] dark:border-white/[0.2] px-3 py-1.5 rounded-lg cursor-default"
+                  variants={fadeInAnimationVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={index}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: [0, -5, 5, -5, 0],
+                    transition: {
+                      duration: 0.3,
+                    },
+                  }}
+                  animate={{
+                    y: [0, -8, 0],
+                    transition: {
+                      duration: 2 + Math.random() * 2,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                      delay: Math.random() * 2,
+                    },
+                  }}
                 >
-                  {skill.icon && <Icon icon={skill.icon} className="text-xl" />}
+                  {skill.icon && (
+                    <motion.div
+                      animate={{
+                        rotate: [0, 10, -10, 0],
+                        transition: {
+                          duration: 3 + Math.random() * 2,
+                          repeat: Infinity,
+                          repeatType: "reverse",
+                          ease: "easeInOut",
+                          delay: Math.random() * 2,
+                        },
+                      }}
+                    >
+                      <Icon icon={skill.icon} className="text-xl" />
+                    </motion.div>
+                  )}
                   <span>{skill.name}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </motion.div>

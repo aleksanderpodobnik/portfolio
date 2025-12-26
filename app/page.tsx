@@ -5,6 +5,8 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import EmailPopup from "@/components/emailPopup";
+import ScrollProgress from "@/components/scrollProgress";
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
         <Experience />
         <Projects />
         <Contact />
+        <EmailPopup />
+        <ScrollProgress />
       </div>
     </main>
   );

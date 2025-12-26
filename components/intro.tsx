@@ -86,7 +86,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.div
-        className="flex flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -94,7 +94,7 @@ export default function Intro() {
         }}
       >
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-gray-950"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-black"
           href="https://github.com/aleksanderpodobnik"
           target="_blank"
         >
@@ -102,7 +102,16 @@ export default function Intro() {
         </a>
 
         <a
-          className="group bg-gray-950 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40"
+          className="group bg-yellow-200 text-black px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack font-semibold"
+          href="https://buymeacoffee.com/aleksanderpodobnik"
+          target="_blank"
+        >
+          <span>☕</span>
+          Coffee?
+        </a>
+
+        <a
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-black"
           href="https://www.linkedin.com/in/aleksanderpodobnik/"
           target="_blank"
         >

@@ -172,7 +172,7 @@ function AttachFiles({
       <button
         type="button"
         onClick={openPicker}
-        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 border border-black/5 rounded-md text-sm text-gray-700 dark:text-white transition"
+        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 border border-black/5 rounded-md text-sm text-gray-700 dark:text-white transition cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
