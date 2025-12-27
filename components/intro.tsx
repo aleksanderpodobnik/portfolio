@@ -24,7 +24,7 @@ export default function Intro() {
         style={{
           position: "absolute",
           inset: 0,
-          height: "550px",
+          height: "600px",
           width: "100%",
           zIndex: -1,
           overflow: "hidden",
