@@ -7,7 +7,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import ParticleContainer from "./particle-container";
+import ParticleContainer from "./code-snippets-background";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -17,7 +17,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="relative mb-16 sm:mb-0 text-center scroll-mt-[100rem] particles-section pt-28 pb-14 sm:pt-36 sm:pb-18 w-full px-4 min-h-[400px] sm:min-h-[650px]"
+      className="relative mb-28 text-center scroll-mt-[100rem] particles-section pt-28 pb-14 sm:pt-36 sm:pb-18 w-full px-4 min-h-[400px] sm:min-h-[650px]"
       style={{ height: "unset" }}
     >
       <div
@@ -64,6 +64,7 @@ export default function Intro() {
               delay: 0.2,
               duration: 0.7,
             }}
+            style={{ transformOrigin: "70% 70%" }}
           >
             👋
           </motion.span>
@@ -75,9 +76,29 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hi, I'm Aleksander.</span> I'm a university{" "}
-        <span className="font-bold">student,</span> currently pursuing a
-        Bachelor's degree in
+        <span className="font-bold">
+          Hi, I'm{" "}
+          {"Aleksander".split("").map((letter, index) => (
+            <motion.span
+              key={index}
+              className="inline-block"
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: index * 0.1,
+                ease: "easeInOut",
+              }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+          .
+        </span>{" "}
+        I'm a university <span className="font-bold">student,</span> currently
+        pursuing a Bachelor's degree in
         <span className="font-bold">
           {" "}
           Computer Science and Informational Technology.
@@ -86,7 +107,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -94,29 +115,19 @@ export default function Intro() {
         }}
       >
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-black"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-115 active:scale-105 transition cursor-pointer borderBlack text-black"
           href="https://github.com/aleksanderpodobnik"
           target="_blank"
         >
-          GitHub <FaGithub className="opacity-70" />
+          <FaGithub className="size-6.5" />
         </a>
 
         <a
-          className="group bg-yellow-200 text-black px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack font-semibold"
-          href="https://buymeacoffee.com/aleksanderpodobnik"
-          target="_blank"
-        >
-          <span>☕</span>
-          Coffee?
-        </a>
-
-        <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-black"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-115 active:scale-105 transition cursor-pointer borderBlack text-black"
           href="https://www.linkedin.com/in/aleksanderpodobnik/"
           target="_blank"
         >
-          <span className="opacity-70">LinkedIn</span>
-          <BsLinkedin className="opacity-70" />
+          <BsLinkedin className="size-6.5" />
         </a>
       </motion.div>
     </section>
