@@ -1,6 +1,8 @@
 "use server";
 
 import { Resend } from "resend";
+import ContactFormEmail from "@/email/contact-form-email";
+import { render } from "@react-email/render";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -37,12 +39,19 @@ export const sendEmail = async (formData: FormData) => {
   }
 
   try {
+    const emailHtml = await render(
+      ContactFormEmail({
+        message,
+        senderEmail,
+      })
+    );
+
     const data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: "Portfolio Contact Form <onboarding@resend.dev>",
       to: "aleksander.podobnik@gmail.com",
-      subject: "New Contact Form Message",
+      subject: `New message from ${senderEmail}`,
       replyTo: senderEmail,
-      text: `From: ${senderEmail}\n\nMessage:\n${message}`,
+      html: emailHtml,
       attachments: attachments,
     });
 

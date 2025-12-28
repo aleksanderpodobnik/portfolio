@@ -83,7 +83,6 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        {/* Attach files UI */}
         <AttachFiles
           inputRef={attachInputRef}
           files={attachedFiles}
