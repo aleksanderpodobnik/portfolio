@@ -54,6 +54,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any"></link>
+      </head>
+
       <body
         className={`${nunito.className} bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
