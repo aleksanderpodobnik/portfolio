@@ -11,9 +11,12 @@ import { Metadata } from "next";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aleksander Podobnik | Portfolio",
+  title: {
+    default: "Aleksander Podobnik | Full-Stack Developer & CS Student",
+    template: "Aleksander Podobnik",
+  },
   description:
-    "Aleksander Podobnik, a student at the University of Maribor, Faculty of Electrical Engineering and Computer Science (FERI)",
+    "Computer Science student at FERI, University of Maribor, specializing in full-stack development with expertise in React, Next.js, TypeScript, Python, and modern web technologies.",
   keywords: [
     "Aleksander Podobnik",
     "Full-Stack Developer",
@@ -26,14 +29,36 @@ export const metadata: Metadata = {
     "Portfolio",
     "Slovenia",
     "Maribor",
+    "FERI",
+    "University of Maribor",
   ],
   authors: [{ name: "Aleksander Podobnik" }],
   creator: "Aleksander Podobnik",
   publisher: "Aleksander Podobnik",
   metadataBase: new URL("https://aleksanderpodobnik.dev"),
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://aleksanderpodobnik.dev",
+    title: "Aleksander Podobnik | Full-Stack Developer & CS Student",
+    description:
+      "Computer Science student specializing in full-stack development with expertise in React, Next.js, TypeScript, Python, and modern web technologies.",
+    siteName: "Aleksander Podobnik Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Aleksander Podobnik - Full-Stack Developer",
+      },
+    ],
+  },
+
   verification: {
     google: "6hXdreZxQZz4nj8WKrRUylMZHn0k5S4GklVP0SvlPOU",
   },
+
   robots: {
     index: true,
     follow: true,
@@ -45,6 +70,18 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+
+  manifest: "/site.webmanifest",
+
+  alternates: {
+    canonical: "https://aleksanderpodobnik.dev",
+  },
 };
 
 export default function RootLayout({
@@ -52,10 +89,42 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Aleksander Podobnik",
+    url: "https://aleksanderpodobnik.dev",
+    image: "https://aleksanderpodobnik.dev/portrait.jpg",
+    jobTitle: "Full-Stack Developer & Computer Science Student",
+    description:
+      "Computer Science student at FERI specializing in full-stack development with expertise in React, Next.js, TypeScript, and Python.",
+    sameAs: [
+      "https://www.linkedin.com/in/aleksanderpodobnik/",
+      "https://github.com/aleksanderpodobnik",
+    ],
+    knowsAbout: [
+      "Web Development",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "JavaScript",
+      "Full-Stack Development",
+    ],
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "University of Maribor - Faculty of Electrical Engineering and Computer Science",
+    },
+  };
+
   return (
     <html lang="en" className="!scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any"></link>
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
 
       <body
