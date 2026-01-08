@@ -71,11 +71,11 @@ export const metadata: Metadata = {
     },
   },
 
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
+  icons: [
+    { rel: "icon", url: "/favicon.ico" },
+    { rel: "shortcut icon", url: "/favicon.ico" },
+    { rel: "apple-touch-icon", url: "/favicon.ico" },
+  ],
 
   manifest: "/site.webmanifest",
 
@@ -120,7 +120,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
