@@ -12,18 +12,20 @@ const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Aleksander Podobnik | Full-Stack Developer & CS Student",
+    default: "Aleksander Podobnik | Portfolio",
     template: "Aleksander Podobnik",
   },
   description:
-    "Computer Science student at FERI, University of Maribor, specializing in full-stack development with expertise in React, Next.js, TypeScript, Python, and modern web technologies.",
+    "Computer Science student @ FERI, University of Maribor, specializing in web development using modern web technologies.",
   keywords: [
     "Aleksander Podobnik",
-    "Full-Stack Developer",
+    "Web Developer",
     "Computer Science",
     "React Developer",
     "Next.js",
+    "Node.js",
     "TypeScript",
+    "C++",
     "Python",
     "Web Development",
     "Portfolio",
@@ -41,16 +43,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://aleksanderpodobnik.dev",
-    title: "Aleksander Podobnik | Full-Stack Developer & CS Student",
+    title: "Aleksander Podobnik | Portfolio",
     description:
-      "Computer Science student specializing in full-stack development with expertise in React, Next.js, TypeScript, Python, and modern web technologies.",
+      "Computer Science student @ FERI, University of Maribor, specializing in web development using modern web technologies.",
     siteName: "Aleksander Podobnik Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Aleksander Podobnik - Full-Stack Developer",
+        alt: "Aleksander Podobnik | Portfolio",
       },
     ],
   },
@@ -95,21 +97,24 @@ export default function RootLayout({
     name: "Aleksander Podobnik",
     url: "https://aleksanderpodobnik.dev",
     image: "https://aleksanderpodobnik.dev/portrait.jpg",
-    jobTitle: "Full-Stack Developer & Computer Science Student",
+    jobTitle: "Web Developer",
     description:
-      "Computer Science student at FERI specializing in full-stack development with expertise in React, Next.js, TypeScript, and Python.",
+      "Computer Science student @ FERI, University of Maribor, specializing in web development using modern web technologies.",
     sameAs: [
       "https://www.linkedin.com/in/aleksanderpodobnik/",
       "https://github.com/aleksanderpodobnik",
     ],
     knowsAbout: [
-      "Web Development",
       "React",
       "Next.js",
+      "Node.js",
       "TypeScript",
       "Python",
+      "C++",
       "JavaScript",
+      "Java",
       "Full-Stack Development",
+      "Web Development",
     ],
     alumniOf: {
       "@type": "EducationalOrganization",

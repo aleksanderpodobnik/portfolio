@@ -76,21 +76,22 @@ export const skillsData = [
     skills: [
       { name: "React.js", icon: "logos:react" },
       { name: "Next.js", icon: "logos:nextjs-icon" },
-      { name: "Vue.js", icon: "logos:vue" },
       { name: "Bootstrap", icon: "logos:bootstrap" },
       { name: "HTML5", icon: "logos:html-5" },
       { name: "CSS3", icon: "logos:css-3" },
       { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
-      { name: "Single Page Applications" },
-      { name: "Responsive Design" },
     ],
   },
   {
     category: "Tools",
     skills: [
+      { name: "Visual Studio Code", icon: "logos:visual-studio-code" },
+      { name: "Windows", icon: "logos:windows-11" },
       { name: "Linux", icon: "logos:linux-tux" },
       { name: "GitHub", icon: "logos:github-icon" },
       { name: "Git", icon: "logos:git-icon" },
+      { name: "GitHub Actions", icon: "logos:github-actions-icon" },
+      { name: "Docker", icon: "logos:docker-icon" },
     ],
   },
 ];
