@@ -28,7 +28,7 @@ export default function Experience() {
     >
       <SectionHeading>My experience</SectionHeading>
       {
-        <VerticalTimeline lineColor="">
+        <VerticalTimeline lineColor="#000">
           {experiencesData.map((item, index) => (
             <React.Fragment key={index}>
               <VerticalTimelineElement

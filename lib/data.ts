@@ -86,7 +86,7 @@ export const skillsData = [
     category: "Tools",
     skills: [
       { name: "Visual Studio Code", icon: "logos:visual-studio-code" },
-      { name: "Windows", icon: "logos:windows-10" },
+      { name: "Windows", icon: "mdi:windows" },
       { name: "Linux", icon: "logos:linux-tux" },
       { name: "GitHub", icon: "logos:github-icon" },
       { name: "Git", icon: "logos:git-icon" },
