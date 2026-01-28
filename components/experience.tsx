@@ -50,15 +50,13 @@ export default function Experience() {
                 date={item.date}
                 icon={
                   item.logo ? (
-                    <div className="flex items-center justify-center w-full h-full">
-                      <Image
-                        src={item.logo}
-                        alt={`${item.location} logo`}
-                        width={40}
-                        height={40}
-                        className="rounded-full object-contain"
-                      />
-                    </div>
+                    <Image
+                      src={item.logo}
+                      alt={`${item.location} logo`}
+                      width={40}
+                      height={40}
+                      className="rounded-full object-contain"
+                    />
                   ) : (
                     item.icon
                   )

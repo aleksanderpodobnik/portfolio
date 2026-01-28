@@ -6,10 +6,11 @@ const nextConfig = {
   images: {
     qualities: [75, 90, 100],
   },
-  // Suppress known HTML validation warnings from third-party libraries
   typescript: {
     ignoreBuildErrors: false,
   },
+  reactStrictMode: true,
+  reactRoot: true,
 };
 
 module.exports = nextConfig;
