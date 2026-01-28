@@ -31,7 +31,7 @@ export default function Education() {
       <SectionHeading>My Education</SectionHeading>
       <div className="mt-4 flex gap-6 border border-black/5 rounded-lg pt-4 pb-7 px-5 md:p-10 bg-gray-100 dark:bg-white/10 dark:hover:bg-white/20 hover:bg-gray-200 transition dark:text-white">
         <div>
-          <Image src="/ferilogo.jpg" alt="FERI" width="150" height="150" />
+          <Image src="/ferilogo.jpg" alt="FERI" width={150} height={150} />
         </div>
         <div>
           <p className="text-lg font-medium pb-2">
@@ -50,7 +50,7 @@ export default function Education() {
 
       <div className="mt-4 flex gap-6 border border-black/5 rounded-lg pt-4 pb-7 px-5 md:p-10 bg-gray-100 dark:bg-white/10 dark:hover:bg-white/20 hover:bg-gray-200 transition dark:text-white">
         <div>
-          <Image src="/ssdlogo.jpg" alt="SSD" width="150" height="150" />
+          <Image src="/ssdlogo.jpg" alt="SSD" width={150} height={150} />
         </div>
         <div>
           <p className="text-lg font-medium pb-2">
