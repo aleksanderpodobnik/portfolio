@@ -199,12 +199,12 @@ function AttachFiles({
             {files.map((f, i) => (
               <li key={i} className="flex items-center justify-between w-full">
                 <div className="flex items-center gap-3">
-                  <span className="truncate max-w-[18rem] text-base sm:text-lg font-medium">
+                  <div className="truncate max-w-[18rem] text-base sm:text-lg font-medium">
                     {f.name}
-                  </span>
-                  <span className="text-sm text-gray-500">
+                  </div>
+                  <div className="text-sm text-gray-500">
                     {Math.round(f.size / 1024)} KB
-                  </span>
+                  </div>
                 </div>
                 <button
                   type="button"

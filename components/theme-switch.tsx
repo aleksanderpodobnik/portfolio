@@ -9,9 +9,16 @@ export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <motion.button
+    <motion.div
       className="fixed bottom-5 right-5 bg-white w-16 h-16 bg-opacity-80 backdrop-blur-[0.5rem] border border-black border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 dark:border-white cursor-pointer overflow-hidden"
       onClick={toggleTheme}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          toggleTheme();
+        }
+      }}
       initial={{ x: 100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut", delay: 1 }}
@@ -75,6 +82,6 @@ export default function ThemeSwitch() {
           repeatDelay: 1.5,
         }}
       />
-    </motion.button>
+    </motion.div>
   );
 }
