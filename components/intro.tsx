@@ -76,29 +76,27 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">
-          Hi, I'm{" "}
-          {"Aleksander".split("").map((letter, index) => (
-            <motion.span
-              key={index}
-              className="inline-block"
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: index * 0.1,
-                ease: "easeInOut",
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-          .
-        </span>{" "}
-        I'm a university <span className="font-bold">student,</span> currently
-        pursuing a Bachelor's degree in
+        <span className="font-bold">Hi, I'm </span>
+        {"Aleksander".split("").map((letter, index) => (
+          <motion.span
+            key={index}
+            className="inline-block font-bold"
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: index * 0.1,
+              ease: "easeInOut",
+            }}
+          >
+            {letter}
+          </motion.span>
+        ))}
+        <span className="font-bold">.</span> I'm a university{" "}
+        <span className="font-bold">student,</span> currently pursuing a
+        Bachelor's degree in
         <span className="font-bold">
           {" "}
           Computer Science and Informational Technology.

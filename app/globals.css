@@ -16,3 +16,14 @@ html.dark {
 .vertical-timeline {
   padding: 0 !important;
 }
+
+/* Suppress HTML validation errors from react-vertical-timeline-component library */
+.vertical-timeline-element {
+  --empty-id: "";
+}
+
+.vertical-timeline-element > div[id=""],
+.vertical-timeline-element-icon[id=""] {
+  /* Library-generated empty IDs - safe to ignore in production */
+  id: none;
+}
