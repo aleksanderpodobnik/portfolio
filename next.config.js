@@ -10,7 +10,6 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   reactStrictMode: true,
-  reactRoot: true,
 };
 
 module.exports = nextConfig;

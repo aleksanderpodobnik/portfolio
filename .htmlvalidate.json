@@ -1,0 +1,8 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "void-style": "off",
+    "attribute-empty-value": "off",
+    "trailing-slash": "off"
+  }
+}
