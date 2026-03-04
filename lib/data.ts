@@ -66,7 +66,6 @@ export const skillsData = [
       { name: "C++", icon: "logos:c-plusplus" },
       { name: "Node.js", icon: "logos:nodejs-icon" },
       { name: "PHP", icon: "logos:php" },
-      { name: "SQL", icon: "logos:sql" },
       { name: "MySQL", icon: "logos:mysql" },
       { name: "PostgreSQL", icon: "logos:postgresql" },
     ],

@@ -40,11 +40,10 @@ export default function Education() {
           </p>
           <hr className="pt-2" />
           <p>
-            Currently pursuing a Bachelor's degree in Computer Science and
-            Informational Technology
+            Bachelor's degree, Computer Science and Informational Technology
           </p>
-          <p className="mt-1">Start date: 2025</p>
-          <p className="my-1">Expected graduation date: 2028</p>
+          <p className="mt-1">Start date: Oct 2025</p>
+          <p className="my-1">Expected graduation date: Sep 2028</p>
         </div>
       </div>
 
@@ -53,13 +52,13 @@ export default function Education() {
           <Image src="/ssdlogo.jpg" alt="SSD" width={150} height={150} />
         </div>
         <div>
-          <p className="text-lg font-medium pb-2">
-            Secondary School Domžale | Computer Science and Informational
-            Technology (SSI)
-          </p>
+          <p className="text-lg font-medium pb-2">High School Domžale</p>
           <hr className="pt-2" />
-          <p className="mt-1">Start date: 2019</p>
-          <p className="my-1">Graduation date: 2024</p>
+          <p>
+            High School Diploma, Computer Science and Informational Technology
+          </p>
+          <p className="mt-1">Start date: Sep 2019</p>
+          <p className="my-1">Graduation date: Aug 2024</p>
         </div>
       </div>
     </motion.section>
