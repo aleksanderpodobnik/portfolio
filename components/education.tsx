@@ -58,7 +58,7 @@ export default function Education() {
             High School Diploma, Computer Science and Informational Technology
           </p>
           <p className="mt-1">Start date: Sep 2019</p>
-          <p className="my-1">Graduation date: Aug 2024</p>
+          <p className="my-1">Graduation date: Aug 2023</p>
         </div>
       </div>
     </motion.section>
