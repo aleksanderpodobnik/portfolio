@@ -63,6 +63,7 @@ export default function Experience() {
                 }
                 iconStyle={{
                   background: theme === "light" ? "white" : "#1d2432",
+                  border: theme === "light" ? "3px solid #000" : "none",
                   fontSize: "1.5rem",
                   display: "flex",
                   alignItems: "center",

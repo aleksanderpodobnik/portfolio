@@ -28,7 +28,7 @@ export default function Contact() {
       }}
       transition={{
         duration: 1.5,
-        delay: 1,
+        delay: 0.5,
       }}
       viewport={{
         once: true,
