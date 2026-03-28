@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 import { Icon } from "@iconify/react";
 
 type ProjectProps = {
@@ -11,9 +11,8 @@ type ProjectProps = {
   description: string;
   tags: readonly string[];
   icons: readonly string[];
-  imageUrl: StaticImageData;
+  imageUrl: string | StaticImageData;
   githubLink?: string;
-  demoLink?: string;
   urlLink?: string;
 };
 
@@ -23,15 +22,14 @@ export default function Project({
   icons,
   imageUrl,
   githubLink,
-  demoLink,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
     <motion.div ref={ref} className="group mb-3 sm:mb-8 last:mb-0">
       <section className="bg-gray-100 max-w-[58rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative lg:min-h-[21rem] hover:bg-gray-200 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="flex flex-row items-center h-full">
-          <div className="w-1/2 pt-4 pb-7 px-5 md:pl-10 md:pr-2 md:pt-10 flex flex-col">
+        <div className="flex flex-col lg:flex-row items-start h-full">
+          <div className="lg:w-1/2 pt-4 pb-7 px-5 md:pl-10 md:pr-2 md:pt-10 flex flex-col">
             <h3 className="text-2xl font-semibold mb-4">{title}</h3>
             <p className="font-bold text-gray-500 dark:text-white/70 mb-2">
               Made with:{" "}
@@ -47,17 +45,6 @@ export default function Project({
               {description}
             </p>
             <div className="flex">
-              {demoLink && (
-                <a
-                  href={demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center bg-[#111827] text-white py-2 px-4 mr-2 rounded-full hover:scale-105"
-                >
-                  <AiFillYoutube className="mr-1" /> Demo
-                </a>
-              )}
-
               {githubLink && (
                 <a
                   href={githubLink}
@@ -72,16 +59,16 @@ export default function Project({
             </div>
           </div>
 
-          <div className="w-1/2 flex items-center justify-end p-4">
-            <Image
-              src={imageUrl}
-              alt="My Project"
-              quality={100}
-              className={
-                "rounded-lg shadow-2xl w-36 sm:w-56 md:w-80 lg:w-[28.25rem] " +
-                "transition transform hover:scale-[1.02]"
-              }
-            />
+          <div className="lg:w-1/2 w-full flex items-center justify-end p-4">
+            <div className="relative h-64 w-full sm:h-72 md:h-80 lg:h-80">
+              <Image
+                src={imageUrl}
+                alt="My Project"
+                quality={100}
+                fill
+                className="rounded-lg shadow-2xl object-cover transition transform hover:scale-[1.02]"
+              />
+            </div>
           </div>
         </div>
       </section>

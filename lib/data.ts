@@ -1,7 +1,7 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import loading from "@/public/loading.gif";
 import zupologoImg from "@/public/zupologo.png";
+import delologoImg from "@/public/delologo.jpg";
 
 export const links = [
   {
@@ -34,24 +34,42 @@ export const experiencesData = [
   {
     title: "Student Internship",
     location: "ZupO.si",
-    description:
-      "During my internship at ZupO.si, I gained hands-on experience with enterprise virtualization through VMware, developed practical networking skills by configuring Ubiquiti network infrastructure, and strengthened my understanding of network design principles using Cisco Packet Tracer. This technical foundation has prepared me to contribute effectively to infrastructure management and network administration in professional IT environments.",
+    description: [
+      "Gained hands-on experience with enterprise virtualization using VMware",
+      "Developed practical networking skills by configuring Ubiquiti network infrastructure",
+      "Strengthened understanding of network design principles using Cisco Packet Tracer",
+      "Built a solid technical foundation for infrastructure management and network administration",
+      "Prepared me to contribute effectively in professional IT environments",
+    ],
     icon: React.createElement(CgWorkAlt),
-    date: "2023 - 2023 · Less than a year",
+    date: "2023 - 2023 · 4 months",
     logo: zupologoImg,
+  },
+  {
+    title: "Student Internship",
+    location: "Delo.si",
+    description: [
+      "Managed and updated customer subscriptions for digital and print newspaper services",
+      "Maintained accurate subscriber data by editing user accounts and updating internal systems",
+      "Performed administrative tasks to support daily operations and improve workflow efficiency",
+      "Developed strong attention to detail and organizational skills",
+      "Gained practical experience working with database-driven systems and customer data",
+    ],
+    icon: React.createElement(CgWorkAlt),
+    date: "2021 - 2022 · 6 months",
+    logo: delologoImg,
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "Nothing here yet . . .",
+    title: "Arduino RFID Door Lock System",
     description:
-      "Stay tuned! I'm currently working on exciting projects that I'll be sharing soon.",
-    tags: ["React"],
-    icons: ["logos:react"],
-    imageUrl: loading,
-    githubLink: "https://github.com/aleksanderpodobnik",
-    demoLink: "https://www.youtube.com/@aco08p/videos",
+      "The project uses Arduino, MFRC522 reader, LCD display, and servo motor. You can edit the RFID cards to be denied or approved.",
+    tags: ["C++", "Arduino"],
+    icons: ["logos:c-plusplus", "logos:arduino"],
+    imageUrl: "/Circuit.png",
+    githubLink: "https://github.com/aleksanderpodobnik/arduinoDoorLock",
   },
 ] as const;
 
@@ -64,6 +82,7 @@ export const skillsData = [
       { name: "JavaScript", icon: "logos:javascript" },
       { name: "Java", icon: "logos:java" },
       { name: "C++", icon: "logos:c-plusplus" },
+      { name: "C", icon: "logos:c" },
       { name: "Node.js", icon: "logos:nodejs-icon" },
       { name: "PHP", icon: "logos:php" },
       { name: "MySQL", icon: "logos:mysql" },
@@ -85,6 +104,7 @@ export const skillsData = [
     category: "Tools",
     skills: [
       { name: "Visual Studio Code", icon: "logos:visual-studio-code" },
+      { name: "CLion", icon: "logos:clion" },
       { name: "Windows", icon: "mdi:windows" },
       { name: "Linux", icon: "logos:linux-tux" },
       { name: "GitHub", icon: "logos:github-icon" },

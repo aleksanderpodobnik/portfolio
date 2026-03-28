@@ -23,7 +23,7 @@ export default function Experience() {
       className="scroll-mt-28 mb-28 sm:mb-40"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 1.5, delay: 0.5 }}
       viewport={{ once: true }}
       suppressHydrationWarning
     >

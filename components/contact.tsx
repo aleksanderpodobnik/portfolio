@@ -27,8 +27,8 @@ export default function Contact() {
         opacity: 1,
       }}
       transition={{
-        duration: 1,
-        delay: 0.5,
+        duration: 1.5,
+        delay: 1,
       }}
       viewport={{
         once: true,
@@ -122,7 +122,7 @@ function AttachFiles({
     const total = unique.reduce((s, f) => s + f.size, 0);
     if (total > MAX_TOTAL_ATTACHMENT_BYTES) {
       toast.error(
-        `Total attachments exceed ${Math.round(MAX_TOTAL_ATTACHMENT_BYTES / 1024 / 1024)} MB. Remove some files.`
+        `Total attachments exceed ${Math.round(MAX_TOTAL_ATTACHMENT_BYTES / 1024 / 1024)} MB. Remove some files.`,
       );
       try {
         if (inputRef.current) inputRef.current.value = "";
@@ -136,7 +136,7 @@ function AttachFiles({
       if (inputRef.current) inputRef.current.files = dt.files;
     } catch (err) {
       console.warn(
-        "DataTransfer not supported; incremental attach may not persist to submission"
+        "DataTransfer not supported; incremental attach may not persist to submission",
       );
     }
 
@@ -151,7 +151,7 @@ function AttachFiles({
       if (inputRef.current) inputRef.current.files = dt.files;
     } catch (err) {
       console.warn(
-        "DataTransfer not supported; removal may not persist to submission"
+        "DataTransfer not supported; removal may not persist to submission",
       );
     }
     setFiles(newFiles);

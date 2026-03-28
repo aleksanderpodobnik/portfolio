@@ -91,7 +91,7 @@ export default function EmailPopup() {
           animation: isClosing ? "none" : "slideIn 1.2s ease-in-out",
         }}
       >
-        <div className="relative p-6 max-h-[90vh] overflow-y-auto">
+        <div className="relative p-6 max-h-[60vh] sm:max-h-[90vh] md:max-h-[80vh] overflow-y-auto">
           <button
             onClick={handleClose}
             className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
@@ -207,7 +207,7 @@ function AttachFiles({
     const total = unique.reduce((s, f) => s + f.size, 0);
     if (total > MAX_TOTAL_ATTACHMENT_BYTES) {
       toast.error(
-        `Total attachments exceed ${Math.round(MAX_TOTAL_ATTACHMENT_BYTES / 1024 / 1024)} MB. Remove some files.`
+        `Total attachments exceed ${Math.round(MAX_TOTAL_ATTACHMENT_BYTES / 1024 / 1024)} MB. Remove some files.`,
       );
       try {
         if (inputRef.current) inputRef.current.value = "";
@@ -221,7 +221,7 @@ function AttachFiles({
       if (inputRef.current) inputRef.current.files = dt.files;
     } catch (err) {
       console.warn(
-        "DataTransfer not supported; incremental attach may not persist to submission"
+        "DataTransfer not supported; incremental attach may not persist to submission",
       );
     }
 
@@ -236,7 +236,7 @@ function AttachFiles({
       if (inputRef.current) inputRef.current.files = dt.files;
     } catch (err) {
       console.warn(
-        "DataTransfer not supported; removal may not persist to submission"
+        "DataTransfer not supported; removal may not persist to submission",
       );
     }
     setFiles(newFiles);
