@@ -1,7 +1,14 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import zupologoImg from "@/public/zupologo.png";
-import delologoImg from "@/public/delologo.jpg";
+
+type Experience = {
+  title: string;
+  location: string;
+  description: string;
+  icon: React.ReactElement;
+  date: string;
+  logo: string;
+};
 
 export const links = [
   {
@@ -30,7 +37,7 @@ export const links = [
   },
 ] as const;
 
-export const experiencesData = [
+export const experiencesData: Experience[] = [
   {
     title: "Student Internship",
     location: "ZupO.si",
@@ -38,7 +45,7 @@ export const experiencesData = [
       "During my internship at Zupo.si, I gained hands-on experience with enterprise virtualization using VMware and worked on configuring Ubiquiti network infrastructure. I also used Cisco Packet Tracer to strengthen my understanding of network design principles. This experience helped me build a solid foundation in infrastructure management and network administration, and prepared me to contribute effectively in a professional IT environment.",
     icon: React.createElement(CgWorkAlt),
     date: "2023 - 2023 · 4 months",
-    logo: zupologoImg,
+    logo: "/zupologo.png",
   },
   {
     title: "Student Internship",
@@ -47,9 +54,9 @@ export const experiencesData = [
       "During my internship at Delo.si, I managed and updated customer subscriptions for both digital and print newspaper services while maintaining accurate subscriber data through regular account updates in internal systems. I supported daily operations by handling administrative tasks and helping improve workflow efficiency. Through this experience, I developed strong attention to detail and organizational skills, while gaining practical experience working with database-driven systems and customer data.",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - 2022 · 6 months",
-    logo: delologoImg,
+    logo: "/delologo.jpg",
   },
-] as const;
+];
 
 export const projectsData = [
   {
