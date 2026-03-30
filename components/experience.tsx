@@ -47,7 +47,7 @@ export default function Experience() {
                       ? "0.4rem solid #9ca3af"
                       : "0.4rem solid rgba(255, 255, 255, 0.5)",
                 }}
-                date={item.date}
+                date={`${item.date}`}
                 icon={
                   item.logo ? (
                     <Image
@@ -70,11 +70,13 @@ export default function Experience() {
                   justifyContent: "center",
                 }}
               >
-                <h3 className="font-semibold capitalize">{item.title}</h3>
+                <h3 className="font-semibold">{item.title}</h3>
                 <p className="font-normal !mt-0">{item.location}</p>
-                <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                  {item.description}
-                </p>
+                <ul className="!mt-1 !font-normal text-gray-700 dark:text-white/75 list-disc list-inside">
+                  {item.description.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
               </VerticalTimelineElement>
             </React.Fragment>
           ))}

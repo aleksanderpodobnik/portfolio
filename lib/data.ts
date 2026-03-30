@@ -4,7 +4,7 @@ import { CgWorkAlt } from "react-icons/cg";
 type Experience = {
   title: string;
   location: string;
-  description: string;
+  description: string[];
   icon: React.ReactElement;
   date: string;
   logo: string;
@@ -39,21 +39,30 @@ export const links = [
 
 export const experiencesData: Experience[] = [
   {
-    title: "Student Internship",
-    location: "ZupO.si",
-    description:
-      "During my internship at Zupo.si, I gained hands-on experience with enterprise virtualization using VMware and worked on configuring Ubiquiti network infrastructure. I also used Cisco Packet Tracer to strengthen my understanding of network design principles. This experience helped me build a solid foundation in infrastructure management and network administration, and prepared me to contribute effectively in a professional IT environment.",
+    title: " ZupO.si d.o.o. - Student Internship",
+    location: "Trzin, Slovenia | On-site",
+    description: [
+      "Configured and managed VMware virtualization environments to support enterprise operations.",
+      "Set up and maintained Ubiquiti network infrastructure, enhancing network reliability.",
+      "Utilized Cisco Packet Tracer to design and simulate complex network topologies.",
+      "Contributed to optimizing network performance and security in IT environments.",
+    ],
     icon: React.createElement(CgWorkAlt),
-    date: "2023 - 2023 · 4 months",
+    date: "May 2023 - Jul 2023 · 3 mos",
     logo: "/zupologo.png",
   },
   {
-    title: "Student Internship",
-    location: "Delo.si",
-    description:
-      "During my internship at Delo.si, I managed and updated customer subscriptions for both digital and print newspaper services while maintaining accurate subscriber data through regular account updates in internal systems. I supported daily operations by handling administrative tasks and helping improve workflow efficiency. Through this experience, I developed strong attention to detail and organizational skills, while gaining practical experience working with database-driven systems and customer data.",
+    title: "Delo.si d.o.o. - Student Internship",
+    location: "Ljubljana, Slovenia | On-site",
+    description: [
+      "Managed and updated customer subscriptions and billing records across digital and print channels.",
+      "Maintained accurate subscriber data through routine account reconciliations and system updates.",
+      "Handled daily administrative operations, including order processing and responding to customer inquiries.",
+      "Contributed to workflow improvements that streamlined subscription processing and reduced manual errors.",
+      "Developed strong attention to detail, organizational skills, and practical experience with database-driven systems and customer data.",
+    ],
     icon: React.createElement(CgWorkAlt),
-    date: "2021 - 2022 · 6 months",
+    date: "May 2022 - Jul 2022 · 3 mos",
     logo: "/delologo.jpg",
   },
 ];
@@ -107,6 +116,8 @@ export const skillsData = [
       { name: "GitHub", icon: "logos:github-icon" },
       { name: "Git", icon: "logos:git-icon" },
       { name: "Docker", icon: "logos:docker-icon" },
+      { name: "Arduino", icon: "logos:arduino" },
+      { name: "Raspberry Pi", icon: "logos:raspberry-pi" },
     ],
   },
 ];
